@@ -2,7 +2,7 @@
   "name": "gb-api-idle",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://RaptorKitchen.github.com/gb-api-idle",
+  "homepage": "https://RaptorKitchen.github.io/gb-api-idle",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
