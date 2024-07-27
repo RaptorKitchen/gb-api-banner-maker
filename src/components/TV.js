@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Shelf = ({ items }) => {
+const TV = ({ items }) => {
     return (
-        <div className="shelf">
+        <div className="tvShelf">
         {items.map(item => (
             <img key={item.id} src={item.image.original_url} alt={item.name} />
         ))}
@@ -10,4 +10,4 @@ const Shelf = ({ items }) => {
     );
 };
 
-export default Shelf;
+export default TV;
