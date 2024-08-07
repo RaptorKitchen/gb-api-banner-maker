@@ -1,11 +1,11 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-import Bedroom from './components/Bedroom';
+import Banner from './components/Banner';
 
 function App() {
     return (
         <div className="App">
-        <Bedroom />
+            <Banner />
         </div>
     );
 }
