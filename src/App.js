@@ -57,7 +57,7 @@ function App() {
     const [backgroundImage, setBackgroundImage] = useState(backgroundImages[0]);
     const [frameImage, setFrameImage] = useState(frameImages[0]);
     const [showInstructions, setShowInstructions] = useState(false);
-    const [logoSrc, setLogoSrc] = useState('/logos/logo-1.png');
+    const [logoSrc, setLogoSrc] = useState(`${baseURL}/logos/logo-1.png`);
 
     useEffect(() => {
         const activeBannerElement = document.getElementById('activeBanner');
@@ -89,7 +89,7 @@ function App() {
             newLogoNumber = Math.floor(Math.random() * 3) + 1;
         } while (newLogoNumber === currentLogoNumber);
 
-        setLogoSrc(`/gb-api-idle/logos/logo-${newLogoNumber}.png`);
+        setLogoSrc(`${baseURL}logos/logo-${newLogoNumber}.png`);
     };
 
     const handleBackgroundSelect = (newImage) => {
