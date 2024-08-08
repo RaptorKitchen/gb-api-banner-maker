@@ -89,7 +89,7 @@ function App() {
             newLogoNumber = Math.floor(Math.random() * 3) + 1;
         } while (newLogoNumber === currentLogoNumber);
 
-        setLogoSrc(`${baseURL}logos/logo-${newLogoNumber}.png`);
+        setLogoSrc(`${baseURL}/logos/logo-${newLogoNumber}.png`);
     };
 
     const handleBackgroundSelect = (newImage) => {
