@@ -57,7 +57,7 @@ function App() {
     const [backgroundImage, setBackgroundImage] = useState(backgroundImages[0]);
     const [frameImage, setFrameImage] = useState(frameImages[0]);
     const [showInstructions, setShowInstructions] = useState(false);
-    const [logoSrc, setLogoSrc] = useState('/gb-api-idle/logos/logo-1.png');
+    const [logoSrc, setLogoSrc] = useState('/logos/logo-1.png');
 
     useEffect(() => {
         const activeBannerElement = document.getElementById('activeBanner');
