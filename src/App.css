@@ -1,4 +1,32 @@
 /* App.css */
+.App {
+    text-align: center;
+}
+
+.titles {
+    h1 {display: none;}
+    margin-right: 20px;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 20px;
+    margin-top: 120px;
+    padding-right: 0;
+    margin-right: -15px;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+    margin-right: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
 
 body {
     font-family: Arial, sans-serif;
@@ -11,12 +39,36 @@ body {
     height: 100vh;
 }
 
+footer {
+    text-align: center;
+    margin-top: 150px;
+}
+
+h1 {
+    margin-top: 150px;
+    text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+}
+
 .banner {
     display: flex;
     flex-direction: column;
     align-items: center;
     width:1500px;
     height:500px;
+}
+
+#activeBanner {
+    background: url('../public/backgrounds/cool-background-2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.frame-container {
+    margin: 145px auto;
 }
 
 .placeholders {
@@ -29,7 +81,14 @@ body {
 .frame {
     width: 215px;
     height: 215px;
+    background-image: url('../public/frames/wood.png');
+    background-image: url('../public/frames/pixellated-wood.png');
+    background-image: url('../public/frames/realistic-wood.png');
+    background-image: url('../public/frames/brushed-metal.png');
+    background-size: contain;
+    margin: 0 15px;
 }
+
 .placeholder {
     width: 150px;
     height: 150px;
@@ -39,6 +98,7 @@ body {
     align-items: center;
     cursor: pointer;
     margin: 30px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgb(193 193 193) 100%);
 }
 
 .placeholder img {
@@ -62,6 +122,8 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    background: white;
+    position: relative;
 }
 
 .search-result {
@@ -73,4 +135,57 @@ body {
 .search-result img {
     display: block;
     margin: 0 auto;
+}
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); 
+}
+
+.modal.show {
+    display: block; 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto;
+    padding: 45px;
+    border: 1px solid #888;
+    width: 80%;
+    text-align: left;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.frame {
+    transition: transform 0.3s ease-in-out;
+}
+
+.frame:hover {
+    transform: scale(1.1);
+}
+
+.background-selector, .frame-selector, #instructions {display: inline; margin: 5px; text-align: center;}
+
+#controls {
+    text-align: center;
 }
