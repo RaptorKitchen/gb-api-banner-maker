@@ -12,7 +12,7 @@
     align-items: center;
     justify-content: flex-end;
     padding: 20px;
-    margin-top: 120px;
+    margin-top: 150px;
     padding-right: 0;
     margin-right: -15px;
 }
@@ -30,18 +30,26 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color:#06c;
+    background-image: linear-gradient(rgba(255,255,255,0.2) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(255,255,255,0.2) 2px, transparent 1px),
+    linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px);
+    background-size:100px 100px, 100px 100px, 20px 20px, 20px 20px;
+    background-position:-2px -2px, -2px -2px, -1px -1px, -1px -1px;
+    color: white;
+    a {color: orange;}
 }
 
 footer {
     text-align: center;
-    margin-top: 150px;
+    margin-top: 250px;
 }
 
 h1 {
@@ -76,6 +84,7 @@ h1 {
     justify-content: space-around;
     width: 100%;
     margin-bottom: 20px;
+    color: black;
 }
 
 .frame {
@@ -108,6 +117,8 @@ h1 {
 
 .search-section {
     text-align: center;
+    margin: 0 auto;
+    width: 1500px;
 }
 
 .search-section input {
@@ -123,13 +134,16 @@ h1 {
     flex-wrap: wrap;
     justify-content: center;
     background: white;
+    padding: 20px;
     position: relative;
+    h6 {color:black;display: block;}
 }
 
 .search-result {
     margin: 10px;
     text-align: center;
     cursor: pointer;
+    color: black;
 }
 
 .search-result img {
@@ -146,7 +160,9 @@ h1 {
     width: 100%; 
     height: 100%; 
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4); 
+    background-color: rgba(0, 0, 0, 0.4);
+    color: black;
+    a {color: inherit;}
 }
 
 .modal.show {
@@ -176,7 +192,7 @@ h1 {
     cursor: pointer;
 }
 
-.frame {
+.frame, .search-result {
     transition: transform 0.3s ease-in-out;
 }
 
@@ -184,8 +200,20 @@ h1 {
     transform: scale(1.1);
 }
 
+.search-result:hover {
+    transform: scale(1.5);
+}
+
 .background-selector, .frame-selector, #instructions {display: inline; margin: 5px; text-align: center;}
 
 #controls {
-    text-align: center;
+    text-align: left;
+    position: absolute;
+    left: 56px;
+    h4 {padding-left:5px;}
+}
+
+#imageTarget {
+    background: white;
+    padding: 5px;
 }

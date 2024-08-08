@@ -2,11 +2,12 @@
   "name": "gb-api-idle",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://RaptorKitchen.github.io/gb-api-idle",
+  "homepage": "https://RaptorKitchen.github.io/gb-api-banner-maker",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^0.21.1",
     "cors": "^2.8.5",
     "express": "^4.19.2",
     "html2canvas": "^1.4.1",
