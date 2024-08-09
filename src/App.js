@@ -115,7 +115,7 @@ function App() {
             <div className="header">
                 <div id="controls">
                     <h4>Background and Frame Selection:</h4>
-                    <button onClick={handleShowInstructions} id="instructions">Instructions</button>
+                    <button onClick={handleShowInstructions} id="instructions" className="white-border">Instructions</button>
                     <Modal show={showInstructions} handleClose={handleCloseInstructions}>
                         <h2>This app is intended to be used to build a banner image - for best results, please use a browser with a minimum resolution of 1600x787.</h2>
                         <p>Start by clicking an empty picture frame, then type the name of a person, place, object, or thing. If the Enter key is pressed or if the user stops typing for two seconds or more, the application will try fetching results available from the <a href="https://giantbomb.com">Giant Bomb API</a> (It's a website about video games).</p>

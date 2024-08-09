@@ -11,7 +11,7 @@ const BackgroundSelector = ({ images, onSelect }) => {
 
     return (
         <div className="background-selector">
-            <select value={selectedImage} onChange={handleChange}>
+            <select value={selectedImage} onChange={handleChange} className="white-border">
                 {images.map((image, index) => (
                     <option key={index} value={image}>
                         Background {index + 1}

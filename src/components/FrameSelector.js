@@ -11,7 +11,7 @@ const FrameSelector = ({ images, onSelect }) => {
 
     return (
         <div className="frame-selector">
-            <select value={selectedImage} onChange={handleChange}>
+            <select value={selectedImage} onChange={handleChange} className="white-border">
                 {images.map((image, index) => (
                     <option key={index} value={image}>
                         Frame {index + 1}
