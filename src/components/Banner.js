@@ -2,9 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import '../App.css';
 
-const proxyServerEndpoint = process.env.NODE_ENV === 'development'
-    ? `http://localhost:5000`
-    : window.location.origin;
+const proxyServerEndpoint = window.location.origin+':5000';
 
 const Banner = () => {
     const [placeholders, setPlaceholders] = useState(Array(5).fill(null));

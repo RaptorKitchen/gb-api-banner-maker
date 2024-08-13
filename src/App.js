@@ -5,9 +5,7 @@ import BackgroundSelector from './components/BackgroundSelector';
 import FrameSelector from './components/FrameSelector';
 import Modal from './components/Modal';
 
-const baseURL = process.env.NODE_ENV === 'development'
-    ? `http://localhost:3000/gb-api-idle`
-    : window.location.origin;
+const baseURL = window.location.origin;
 
 const backgroundImages = [
     `${baseURL}/backgrounds/cool-background-2.png`,
