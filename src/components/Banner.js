@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import '../App.css';
 
-const proxyServerEndpoint = window.location.origin+':5000';
+const proxyServerEndpoint = window.location.origin.replace(':3000', ':5000');
 
 const Banner = () => {
     const [placeholders, setPlaceholders] = useState(Array(5).fill(null));
@@ -43,6 +43,7 @@ const Banner = () => {
                 })
                 .catch(error => {
                     console.error('Error fetching search results:', error);
+                    console.error(`Endpoint: ${SEARCH_API_ENDPOINT}`);
                     setSearchStatus('Error fetching results'); // Update search status on error
                 });
         } else {
