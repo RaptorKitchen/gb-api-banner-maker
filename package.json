@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "homepage": ".",
-  "proxy": "https://www.giantbomb.com",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.21.1",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
     "html2canvas": "^1.4.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -17,10 +18,13 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "HOST=seahorse-app-zm477.ondigitalocean.app react-scripts start",
+    "start": "concurrently \"npm run server\" \"npm start --prefix client\"",
+    "client": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "server": "node src/server/server.js"
   },
   "eslintConfig": {
     "extends": [
