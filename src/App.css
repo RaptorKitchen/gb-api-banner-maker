@@ -98,13 +98,15 @@ h1 {
 .placeholder {
     width: 150px;
     height: 150px;
-    border: 2px dashed #ccc;
+    border: 2px solid #000;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     margin: 30px;
-    background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgb(193 193 193) 100%);
+    /*background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgb(193 193 193) 100%); -- original silver gradient background */
+    background: radial-gradient(circle, rgb(157 153 153) 0%, rgb(0 0 0) 100%);
+    color: white;
 }
 
 .placeholder img {
