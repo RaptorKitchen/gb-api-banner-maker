@@ -1,6 +1,4 @@
-# Getting Started with Create React App
-
-Top Five Banner Maker
+# Giant Bomb API Top Five Banner Maker
 
 Create a fun image of your top five of anything in the Giant Bomb database.
  
