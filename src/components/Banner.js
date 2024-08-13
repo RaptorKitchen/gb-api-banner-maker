@@ -31,23 +31,25 @@ const Banner = () => {
     const performSearch = (query) => {
         if (query.length > 2) {
             setSearchStatus('Searching...');
-            const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-            const apiUrl = `https://www.giantbomb.com/api/search/?api_key=24ded5f5870d9f15b4af9faf26e282f8edd770ad&format=json&query=${query}&resources=game,franchise,character,object,location,person`;
-            const SEARCH_API_ENDPOINT = proxyUrl + apiUrl;
+
+            const proxyUrl = 'https://api.allorigins.win/get?url=';
+            const apiUrl = encodeURIComponent(`https://www.giantbomb.com/api/search/?api_key=24ded5f5870d9f15b4af9faf26e282f8edd770ad&format=json&query=${query}&resources=game,franchise,character,object,location,person`);
+            const SEARCH_API_ENDPOINT = `${proxyUrl}${apiUrl}`;
     
             axios.get(SEARCH_API_ENDPOINT)
-                .then(response => {
-                    console.log('Search results:', response.data.results);
-                    setSearchResults(response.data.results);
-                    setSearchStatus(response.data.results.length > 0 ? 'Click to add to frame' : 'No results');
-                    if (resultsRef.current) {
-                        resultsRef.current.scrollIntoView({ behavior: 'smooth' });
-                    }
-                })
-                .catch(error => {
-                    console.error('Error fetching search results:', error);
-                    setSearchStatus('Error fetching results');
-                });
+            .then(response => {
+                const parsedData = JSON.parse(response.data.contents);  // Since the response will be wrapped in 'contents'
+                console.log('Search results:', parsedData.results);
+                setSearchResults(parsedData.results);
+                setSearchStatus(parsedData.results.length > 0 ? 'Click to add to frame' : 'No results');
+                if (resultsRef.current) {
+                    resultsRef.current.scrollIntoView({ behavior: 'smooth' });
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching search results:', error);
+                setSearchStatus('Error fetching results');
+            });
         } else {
             setSearchResults([]);
             setSearchStatus('');
