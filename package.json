@@ -24,7 +24,8 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "server": "node src/server/server.js",
-    "start-server": "node src/server/server.js"    
+    "start-server": "node src/server/server.js",
+    "serve": "npm run build && npm run start-server"
   },
   "eslintConfig": {
     "extends": [
