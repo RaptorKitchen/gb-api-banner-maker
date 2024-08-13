@@ -3,7 +3,7 @@ import axios from 'axios';
 import '../App.css';
 
 //const proxyServerEndpoint = window.location.origin.replace(':3000', ':5000'); used during development
-const proxyServerEndpoint = window.location.origin.replace(':3000', '');
+const proxyServerEndpoint = window.location.origin.replace(/:\d+$/, ':5000');
 
 
 const Banner = () => {
