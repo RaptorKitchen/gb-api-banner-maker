@@ -2,7 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import '../App.css';
 
-const proxyServerEndpoint = window.location.origin.replace(':3000', ':5000');
+//const proxyServerEndpoint = window.location.origin.replace(':3000', ':5000'); used during development
+const proxyServerEndpoint = window.location.origin.replace(':3000', '');
+
 
 const Banner = () => {
     const [placeholders, setPlaceholders] = useState(Array(5).fill(null));
@@ -29,14 +31,14 @@ const Banner = () => {
 
     const performSearch = (query) => {
         if (query.length > 2) {
-            setSearchStatus('Searching...'); // Update search status
+            setSearchStatus('Searching...');
             const SEARCH_API_ENDPOINT = `${proxyServerEndpoint}/api/search?query=${query}`;
             console.log(`Searching for: ${query}`);
             axios.get(SEARCH_API_ENDPOINT)
                 .then(response => {
                     console.log('Search results:', response.data.results);
                     setSearchResults(response.data.results);
-                    setSearchStatus(response.data.results.length > 0 ? 'Click to add to frame' : 'No results'); // Update search status based on results
+                    setSearchStatus(response.data.results.length > 0 ? 'Click to add to frame' : 'No results');
                     if (resultsRef.current) {
                         resultsRef.current.scrollIntoView({ behavior: 'smooth' });
                     }
@@ -44,11 +46,11 @@ const Banner = () => {
                 .catch(error => {
                     console.error('Error fetching search results:', error);
                     console.error(`Endpoint: ${SEARCH_API_ENDPOINT}`);
-                    setSearchStatus('Error fetching results'); // Update search status on error
+                    setSearchStatus('Error fetching results');
                 });
         } else {
             setSearchResults([]);
-            setSearchStatus(''); // Reset search status if query is too short
+            setSearchStatus('');
         }
     };
 
@@ -109,12 +111,16 @@ const Banner = () => {
                             />
                             <div className="search-results">
                                 <h6 id="resultText">{searchStatus}</h6>
-                                {searchResults.map(result => (
-                                    <div key={result.id} className="search-result" onClick={() => handleSelectResult(result)}>
-                                        <img src={result.image.icon_url} alt={result.name} />
-                                        <span>{result.name}</span>
-                                    </div>
-                                ))}
+                                {Array.isArray(searchResults) && searchResults.length > 0 ? (
+                                    searchResults.map(result => (
+                                        <div key={result.id} className="search-result" onClick={() => handleSelectResult(result)}>
+                                            <img src={result.image.icon_url} alt={result.name} />
+                                            <span>{result.name}</span>
+                                        </div>
+                                    ))
+                                ) : (
+                                    <p>No results found</p>
+                                )}
                             </div>
                         </div>
                     )}

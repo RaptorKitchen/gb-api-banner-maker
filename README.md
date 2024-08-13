@@ -9,7 +9,9 @@ Try finding a background and frame combination you like. If so inclined, feel fr
 ### Powered by
 
 Powered by the Giant Bomb API: [https://giantbomb.com/](https://giantbomb.com/)
+
 CoolBackgrounds.io: [https://coolbackgrounds.io/](https://coolbackgrounds.io/)
+
 CSS Blueprint background by Matteo De Santi: [https://codepen.io/matteodesanti](https://codepen.io/matteodesanti)
 
 
