@@ -3,8 +3,7 @@ import axios from 'axios';
 import '../App.css';
 
 //const proxyServerEndpoint = window.location.origin.replace(':3000', ':5000'); used during development
-const proxyServerEndpoint = window.location.origin.replace(/:\d+$/, ':5000');
-
+const proxyServerEndpoint = window.location.origin;
 
 const Banner = () => {
     const [placeholders, setPlaceholders] = useState(Array(5).fill(null));
@@ -32,7 +31,7 @@ const Banner = () => {
     const performSearch = (query) => {
         if (query.length > 2) {
             setSearchStatus('Searching...');
-            const SEARCH_API_ENDPOINT = `${proxyServerEndpoint}/api/search?query=${query}`;
+            const SEARCH_API_ENDPOINT = `${proxyServerEndpoint}:5000/api/search?query=${query}`;
             console.log(`Searching for: ${query}`);
             axios.get(SEARCH_API_ENDPOINT)
                 .then(response => {
