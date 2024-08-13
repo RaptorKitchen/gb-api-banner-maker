@@ -31,7 +31,8 @@ const Banner = () => {
     const performSearch = (query) => {
         if (query.length > 2) {
             setSearchStatus('Searching...');
-            const SEARCH_API_ENDPOINT = `${proxyServerEndpoint}:5000/api/search?query=${query}`;
+            const SEARCH_API_ENDPOINT = `https://www.giantbomb.com/api/search/?api_key=24ded5f5870d9f15b4af9faf26e282f8edd770ad&format=json&query=${query}&resources=game,franchise,character,object,location,person`;
+            
             console.log(`Searching for: ${query}`);
             axios.get(SEARCH_API_ENDPOINT)
                 .then(response => {
@@ -44,14 +45,13 @@ const Banner = () => {
                 })
                 .catch(error => {
                     console.error('Error fetching search results:', error);
-                    console.error(`Endpoint: ${SEARCH_API_ENDPOINT}`);
                     setSearchStatus('Error fetching results');
                 });
         } else {
             setSearchResults([]);
             setSearchStatus('');
         }
-    };
+    };    
 
     const handleSearchInputChange = (e) => {
         const query = e.target.value;
